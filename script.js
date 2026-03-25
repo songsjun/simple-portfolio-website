@@ -1,48 +1,54 @@
 (function () {
-  var form = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
 
   if (!form || !status) {
     return;
   }
 
-  var recipient = "hello@junsong.dev";
-  var subjectBase = "Portfolio inquiry from ";
+  var recipient = 'hello@example.com';
+  var subjectPrefix = 'Portfolio inquiry from ';
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
+  form.addEventListener('submit', function (event) {
+    var nameField = document.getElementById('name');
+    var emailField = document.getElementById('email');
+    var messageField = document.getElementById('message');
 
-    var nameInput = document.getElementById("name");
-    var emailInput = document.getElementById("email");
-    var messageInput = document.getElementById("message");
-
-    var name = nameInput ? nameInput.value.trim() : "";
-    var email = emailInput ? emailInput.value.trim() : "";
-    var message = messageInput ? messageInput.value.trim() : "";
-
-    if (!name || !email) {
-      status.textContent = "Please enter both your name and email before sending.";
+    if (!nameField || !emailField || !messageField) {
       return;
     }
 
-    var subject = subjectBase + name;
-    var lines = [
-      "Name: " + name,
-      "Email: " + email,
-      "",
-      "Message:",
-      message || "No message provided."
+    var name = nameField.value.trim();
+    var email = emailField.value.trim();
+    var message = messageField.value.trim();
+
+    if (!name || !email) {
+      event.preventDefault();
+      status.textContent = 'Please enter both your name and email before sending.';
+      status.className = 'form-status is-error';
+      return;
+    }
+
+    event.preventDefault();
+
+    var bodyLines = [
+      'Name: ' + name,
+      'Email: ' + email,
+      '',
+      'Message:',
+      message || '(No message provided)'
     ];
 
     var mailtoUrl =
-      "mailto:" +
+      'mailto:' +
       recipient +
-      "?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(lines.join("\n"));
+      '?subject=' +
+      encodeURIComponent(subjectPrefix + name) +
+      '&body=' +
+      encodeURIComponent(bodyLines.join('\n'));
 
-    status.textContent = "Opening your email app...";
+    status.textContent = 'Opening your email app with a prefilled draft.';
+    status.className = 'form-status is-success';
     window.location.href = mailtoUrl;
   });
 })();
