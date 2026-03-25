@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minjun Song | Product-Focused Frontend Developer</title>
+    <meta
+      name="description"
+      content="Portfolio site for Minjun Song, a frontend developer building responsive product websites and polished user experiences."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#top">Minjun Song</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#hero">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section id="hero" class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Available for frontend product work and freelance builds</p>
+            <h1>Building clear, fast websites that help teams look credible and ship confidently.</h1>
+            <p class="role">Frontend Developer specializing in static sites, product marketing pages, and UI polish.</p>
+            <p class="bio">
+              I help startups and small teams turn rough requirements into responsive, maintainable web experiences.
+              My focus is readable structure, strong visual hierarchy, and practical implementation that works without a heavy stack.
+            </p>
+            <ul class="credibility-list" aria-label="Credibility highlights">
+              <li>4+ years building frontend experiences</li>
+              <li>Focus on product websites, SaaS flows, and launch-ready UI</li>
+              <li>Works across HTML, CSS, JavaScript, and React-based teams</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#contact">Start a Conversation</a>
+            </div>
+          </div>
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-photo" aria-hidden="true">MS</div>
+            <p class="profile-label">Profile Snapshot</p>
+            <p class="profile-text">Based on practical delivery, accessible markup, and clean responsive layouts for public-facing web products.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="projects" class="projects section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected Work</p>
+            <h2>Projects that show product thinking, not just code output.</h2>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>Simple Portfolio Website</h3>
+              <p>
+                A lightweight personal site built as a pure static page with clear information hierarchy and no deployment complexity.
+              </p>
+              <p class="project-impact">
+                Relevant for founders and freelancers who need a credible web presence that is easy to update and cheap to host.
+              </p>
+              <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
+            </article>
+            <article class="project-card">
+              <h3>Product Landing Page Refresh</h3>
+              <p>
+                Reworked a feature-heavy landing page into a simpler, conversion-oriented layout with stronger section flow and mobile readability.
+              </p>
+              <p class="project-impact">
+                Shows how I translate messy positioning into scannable content blocks that help recruiters and buyers understand value quickly.
+              </p>
+              <a href="https://example.com/landing-page-case-study" target="_blank" rel="noopener noreferrer">Read case study</a>
+            </article>
+            <article class="project-card">
+              <h3>Operations Dashboard UI</h3>
+              <p>
+                Built a responsive dashboard interface for internal operations tracking with emphasis on clarity, spacing, and maintainable components.
+              </p>
+              <p class="project-impact">
+                Useful proof for teams that need interface cleanup and pragmatic frontend delivery without overengineering the stack.
+              </p>
+              <a href="https://example.com/dashboard-demo" target="_blank" rel="noopener noreferrer">See demo</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact section" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">Reach out with a role, project, or quick question.</h2>
+            <p>
+              The form below uses your mail app as a lightweight no-backend contact flow. If that is unreliable on your device, use the direct email or LinkedIn fallback options.
+            </p>
+            <div class="contact-fallbacks" aria-label="Fallback contact options">
+              <div class="fallback-card">
+                <p class="fallback-label">Direct email</p>
+                <p class="fallback-value">minjun.song.dev@example.com</p>
+                <a href="mailto:minjun.song.dev@example.com">minjun.song.dev@example.com</a>
+              </div>
+              <div class="fallback-card">
+                <p class="fallback-label">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/minjun-song" target="_blank" rel="noopener noreferrer">linkedin.com/in/minjun-song</a>
+              </div>
+            </div>
+          </div>
+
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="mailto:minjun.song.dev@example.com"
+            method="post"
+            enctype="text/plain"
+            data-recipient="minjun.song.dev@example.com"
+          >
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="What are you building, and what kind of help do you need?"></textarea>
+
+            <p class="form-note" id="form-note">
+              Required fields are name and email. JavaScript, when available, prepares a safer mail draft with your message.
+            </p>
+
+            <button type="submit" class="button button-primary">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>&copy; 2026 Minjun Song</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
