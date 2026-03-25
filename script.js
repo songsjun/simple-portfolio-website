@@ -1,94 +1,40 @@
-const CONTACT_EMAIL = "hello@junsong.dev";
-const MAIL_SUBJECT = "Portfolio inquiry";
+const contactForm = document.getElementById('contact-form');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const messageInput = document.getElementById('message');
+const statusNode = document.getElementById('form-status');
 
-function getTrimmedValue(field) {
-  return field.value.trim();
-}
+const CONTACT_EMAIL = 'hello@junsong.dev';
+const SUBJECT_PREFIX = 'Portfolio inquiry from';
 
-function setError(field, errorElement, message) {
-  field.setAttribute("aria-invalid", message ? "true" : "false");
-  errorElement.textContent = message;
-}
-
-function buildMailtoUrl(name, email, message) {
-  const body = [
-    `Name: ${name}`,
-    `Email: ${email}`,
-    "",
-    "Message:",
-    message || "No message provided."
-  ].join("\n");
-
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(MAIL_SUBJECT)}&body=${encodeURIComponent(body)}`;
-}
-
-function initContactForm() {
-  const form = document.getElementById("contact-form");
-  if (!(form instanceof HTMLFormElement)) {
-    return;
-  }
-
-  const nameField = document.getElementById("name");
-  const emailField = document.getElementById("email");
-  const messageField = document.getElementById("message");
-  const nameError = document.getElementById("name-error");
-  const emailError = document.getElementById("email-error");
-  const formStatus = document.getElementById("form-status");
-
-  if (
-    !(nameField instanceof HTMLInputElement) ||
-    !(emailField instanceof HTMLInputElement) ||
-    !(messageField instanceof HTMLTextAreaElement) ||
-    !(nameError instanceof HTMLElement) ||
-    !(emailError instanceof HTMLElement) ||
-    !(formStatus instanceof HTMLElement)
-  ) {
-    return;
-  }
-
-  form.addEventListener("submit", function (event) {
+if (contactForm && nameInput && emailInput && messageInput && statusNode) {
+  contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    const name = getTrimmedValue(nameField);
-    const email = getTrimmedValue(emailField);
-    const message = getTrimmedValue(messageField);
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
 
-    setError(nameField, nameError, "");
-    setError(emailField, emailError, "");
-    formStatus.textContent = "";
-    formStatus.removeAttribute("data-state");
-
-    let hasError = false;
-
-    if (!name) {
-      setError(nameField, nameError, "Please enter your name.");
-      hasError = true;
-    }
-
-    if (!email) {
-      setError(emailField, emailError, "Please enter your email.");
-      hasError = true;
-    }
-
-    if (hasError) {
-      formStatus.textContent = "Name and email are required before opening an email draft.";
-      if (!name) {
-        nameField.focus();
-      } else {
-        emailField.focus();
-      }
+    if (!name || !email) {
+      statusNode.textContent = 'Please enter your name and email before opening a draft.';
+      statusNode.classList.remove('is-success');
       return;
     }
 
-    const mailtoUrl = buildMailtoUrl(name, email, message);
-    formStatus.textContent = "Opening your default email app...";
-    formStatus.dataset.state = "success";
+    const subject = `${SUBJECT_PREFIX} ${name}`;
+    const lines = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      '',
+      'Message:',
+      message || 'No message provided.'
+    ];
+
+    const body = lines.join('\n');
+    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    statusNode.textContent = 'Opening your email client.';
+    statusNode.classList.add('is-success');
     window.location.href = mailtoUrl;
   });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initContactForm);
-} else {
-  initContactForm();
 }

@@ -5,126 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Jun Song portfolio website for recruiters and freelance clients looking for a frontend developer who ships clear, responsive web experiences."
+      content="Portfolio website for Jun Song, a frontend-focused software engineer building polished product experiences for teams and clients."
     />
-    <title>Jun Song | Frontend Developer</title>
+    <title>Jun Song | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <header class="site-header" id="top">
-      <nav class="site-nav" aria-label="Primary">
-        <a class="brand" href="#top">Jun Song</a>
-        <div class="nav-links">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="#hero">Jun Song</a>
+        <nav class="site-nav" aria-label="Primary">
           <a href="#hero">Home</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="hero" id="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Frontend developer for product teams and freelance builds</p>
-          <h1>Clear, responsive websites that help people understand your product fast.</h1>
-          <p class="role">I specialize in frontend implementation, static marketing sites, and practical UX polish.</p>
-          <p class="bio">
-            I build lightweight web experiences that are easy to maintain, easy to scan, and credible enough for hiring teams or client leads to trust quickly.
-          </p>
-          <ul class="credibility-list">
-            <li>4+ years working on production-facing web UI</li>
-            <li>Focus on product pages, internal tools, and static site delivery</li>
-            <li>Core stack: HTML, CSS, JavaScript, and pragmatic accessibility</li>
-          </ul>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">See projects</a>
-            <a class="button secondary" href="#contact">Contact me</a>
+      <section id="hero" class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Frontend engineering for products people actually use</p>
+            <h1>Building responsive web experiences that feel clear, fast, and production-ready.</h1>
+            <p class="role">Software Engineer specializing in modern UI implementation, static web delivery, and product-focused frontend systems.</p>
+            <p class="bio">
+              I help teams turn product direction into polished interfaces with readable code, strong UX fundamentals, and pragmatic delivery. My work focuses on shipping clean web experiences that are easy to maintain and credible in front of customers, recruiters, and stakeholders.
+            </p>
+            <ul class="credibility-list" aria-label="Credibility cues">
+              <li>4+ years building customer-facing web interfaces</li>
+              <li>Focus on portfolio, product marketing, and internal tool frontends</li>
+              <li>Comfortable with HTML, CSS, JavaScript, React, and shipping static-first experiences</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#contact">Start a Conversation</a>
+            </div>
+          </div>
+          <aside class="profile-card" aria-label="Profile photo placeholder">
+            <div class="profile-photo" role="img" aria-label="Profile photo placeholder">JS</div>
+            <p class="profile-caption">Profile photo placeholder</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2>Projects that show range and delivery quality</h2>
+            <p>
+              A small set of public projects with enough context for recruiters and freelance leads to judge fit quickly.
+            </p>
+          </div>
+          <div class="projects-grid">
+            <article class="project-card">
+              <h3>Simple Portfolio Website</h3>
+              <p>
+                A static single-page portfolio focused on fast comprehension, responsive layout, and low-maintenance publishing.
+              </p>
+              <p class="project-outcome">
+                Relevant for founders and independent professionals who need one clean public URL instead of scattered profile links.
+              </p>
+              <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
+            </article>
+
+            <article class="project-card">
+              <h3>GitHub PM Agent</h3>
+              <p>
+                A workflow-driven automation project for coordinating issue execution, prompts, and engineering actions across repository events.
+              </p>
+              <p class="project-outcome">
+                Shows experience with developer tooling, structured automation, and turning process-heavy work into repeatable systems.
+              </p>
+              <a href="https://github.com/songsjun/github-pm-agent" target="_blank" rel="noopener noreferrer">See project details</a>
+            </article>
+
+            <article class="project-card">
+              <h3>Responsive Landing Page System</h3>
+              <p>
+                A reusable marketing page concept built around semantic HTML, scannable content blocks, and mobile-first CSS patterns.
+              </p>
+              <p class="project-outcome">
+                Useful for freelance leads who need fast turnaround on polished web presence work without adding a frontend toolchain.
+              </p>
+              <a href="https://github.com/songsjun" target="_blank" rel="noopener noreferrer">Browse GitHub profile</a>
+            </article>
           </div>
         </div>
-
-        <aside class="profile-card" aria-label="Profile photo placeholder">
-          <div class="profile-avatar" aria-hidden="true">JS</div>
-          <p>Profile photo placeholder</p>
-        </aside>
       </section>
 
-      <section class="projects section" id="projects">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2>Projects</h2>
-          <p>Three examples that show delivery range, product thinking, and execution quality.</p>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>SaaS Landing Page Refresh</h3>
-            <p>Redesigned a product landing page to improve scanability, tighten messaging, and reduce visual clutter across mobile and desktop layouts.</p>
-            <p class="project-context">Useful for freelance leads because it shows I can turn vague positioning into a sharper, conversion-friendly page without overengineering.</p>
-            <a href="https://example.com/saas-refresh" target="_blank" rel="noopener noreferrer">View live example</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Operations Dashboard UI</h3>
-            <p>Built a responsive internal dashboard with reusable sections, cleaner form controls, and a more readable layout for day-to-day reporting tasks.</p>
-            <p class="project-context">Useful for recruiters because it demonstrates structured UI work, maintainable frontend patterns, and practical usability decisions.</p>
-            <a href="https://example.com/dashboard-case-study" target="_blank" rel="noopener noreferrer">Read case study</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Static Portfolio Website System</h3>
-            <p>Created a no-build portfolio pattern using semantic HTML, mobile-first CSS, and small JavaScript enhancements for contact handling.</p>
-            <p class="project-context">Useful for small businesses that want a fast, low-maintenance public site that works on static hosting without backend complexity.</p>
-            <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact">
-        <div class="section-heading">
-          <p class="eyebrow">Start a conversation</p>
-          <h2>Contact</h2>
-          <p>The form opens an email draft for convenience. Direct email and LinkedIn remain available if mailto is unreliable.</p>
-        </div>
-
-        <div class="contact-layout">
-          <form id="contact-form" class="contact-form" action="#contact" method="post" novalidate>
-            <div class="form-field">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" autocomplete="name" />
-              <p class="field-error" id="name-error" aria-live="polite"></p>
-            </div>
-
-            <div class="form-field">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" autocomplete="email" />
-              <p class="field-error" id="email-error" aria-live="polite"></p>
-            </div>
-
-            <div class="form-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="Tell me about the role, project, or problem."></textarea>
-            </div>
-
-            <p class="form-status" id="form-status" aria-live="polite"></p>
-            <button class="button primary" type="submit">Open email draft</button>
-          </form>
-
-          <aside class="contact-fallback" aria-label="Fallback contact options">
-            <h3>Fallback contact options</h3>
-            <p>Email: <a href="mailto:hello@junsong.dev">hello@junsong.dev</a></p>
+      <section id="contact" class="section contact-section">
+        <div class="container contact-grid">
+          <div class="section-heading contact-copy">
+            <p class="eyebrow">Contact</p>
+            <h2>Reach out with an opportunity, project, or quick intro</h2>
             <p>
-              LinkedIn:
-              <a href="https://www.linkedin.com/in/junsong" target="_blank" rel="noopener noreferrer">linkedin.com/in/junsong</a>
+              The form below uses your email app as a convenience. If that does not work, use the direct contact details shown here.
             </p>
-            <p class="fallback-note">If the button does not open your mail app, use the direct email link or LinkedIn.</p>
-          </aside>
+            <div class="contact-fallbacks">
+              <p><strong>Email:</strong> <a href="mailto:hello@junsong.dev">hello@junsong.dev</a></p>
+              <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/junsong-song" target="_blank" rel="noopener noreferrer">linkedin.com/in/junsong-song</a>
+              </p>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" />
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6"></textarea>
+
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+            <button class="button button-primary" type="submit">Open Email Draft</button>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>&copy; 2026 Jun Song. Built as a static single-page portfolio.</p>
+      <div class="container footer-wrap">
+        <p>© 2026 Jun Song. Built as a static single-page site.</p>
+        <a href="#hero">Back to top</a>
+      </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
