@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jun Song | Frontend Developer</title>
+    <meta
+      name="description"
+      content="Single-page portfolio for Jun Song, a frontend developer focused on accessible marketing sites and lightweight product interfaces."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-layout">
+        <a class="brand" href="#hero" aria-label="Go to top">Jun Song</a>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-list">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Frontend delivery with product clarity</p>
+            <h1>Building responsive websites that help teams explain value fast.</h1>
+            <p class="role-statement">
+              I am a frontend developer focused on accessible landing pages, portfolio sites, and lightweight product UI for recruiters, startups, and freelance clients.
+            </p>
+            <p class="bio">
+              I turn product goals into clear public-facing experiences that are easy to scan, easy to maintain, and reliable without heavy tooling. My work emphasizes strong structure, practical styling, and content that supports decision-making.
+            </p>
+            <ul class="credibility-list" aria-label="Credibility highlights">
+              <li>5+ years building user-facing web experiences</li>
+              <li>Specialized in semantic HTML, CSS systems, and JavaScript enhancement</li>
+              <li>Delivered marketing pages, internal tools, and portfolio-style sites across multiple domains</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#contact">Start a Conversation</a>
+            </div>
+          </div>
+          <aside class="hero-aside" aria-label="Profile photo placeholder">
+            <div class="photo-card">
+              <div class="photo-placeholder">Profile Photo Placeholder</div>
+              <p class="photo-note">Add a professional headshot here when available.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects-section" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Selected work</p>
+            <h2 id="projects-title">Projects that show fit quickly</h2>
+            <p>
+              Each project includes enough context for a recruiter or freelance lead to judge relevance without guessing from the title alone.
+            </p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <h3>LaunchPad SaaS Landing Page</h3>
+              <p>
+                Designed and built a responsive marketing page for a B2B product launch with a strong first-screen message, proof sections, and clear conversion paths.
+              </p>
+              <p class="project-impact">
+                Relevance: demonstrates positioning, responsive layout, and recruiter-friendly frontend polish for product-facing work.
+              </p>
+              <a href="https://example.com/launchpad-case-study" target="_blank" rel="noopener noreferrer">View case study</a>
+            </article>
+            <article class="project-card">
+              <h3>Freelance Studio Portfolio Refresh</h3>
+              <p>
+                Reworked a consultant portfolio into a single-page experience with clearer hierarchy, faster scanning, and simpler maintenance through static files.
+              </p>
+              <p class="project-impact">
+                Relevance: shows fit for small-business and freelance clients who need a practical site without backend complexity.
+              </p>
+              <a href="https://example.com/studio-portfolio" target="_blank" rel="noopener noreferrer">See live preview</a>
+            </article>
+            <article class="project-card">
+              <h3>Operations Dashboard UI</h3>
+              <p>
+                Built a lightweight internal dashboard interface focused on readable data groupings, status visibility, and mobile-aware layout decisions.
+              </p>
+              <p class="project-impact">
+                Relevance: proves I can handle structured product UI, not only marketing pages, while keeping the interface understandable under real constraints.
+              </p>
+              <a href="https://github.com/example/operations-dashboard" target="_blank" rel="noopener noreferrer">Open repository</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div>
+            <div class="section-heading section-heading-tight">
+              <p class="eyebrow">Contact</p>
+              <h2 id="contact-title">Reach out without friction</h2>
+              <p>
+                The form uses a mail client for convenience. If that is unreliable on your device, use the fallback email address or LinkedIn link below.
+              </p>
+            </div>
+            <div class="contact-fallbacks">
+              <p><strong>Email:</strong> <a href="mailto:hello@junsong.dev">hello@junsong.dev</a></p>
+              <p>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/jun-song" target="_blank" rel="noopener noreferrer">linkedin.com/in/jun-song</a>
+              </p>
+            </div>
+          </div>
+
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+            </div>
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6"></textarea>
+            </div>
+            <p id="form-status" class="form-status" aria-live="polite"></p>
+            <button type="submit" class="button button-primary">Send via Email App</button>
+            <noscript>
+              <p class="noscript-note">
+                JavaScript is disabled. Use the email address or LinkedIn link above to get in touch.
+              </p>
+            </noscript>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-layout">
+        <p>Static single-page portfolio built for direct browser viewing and GitHub Pages deployment.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
