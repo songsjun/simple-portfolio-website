@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minjun Song | Product-Focused Frontend Developer</title>
     <meta
       name="description"
-      content="Portfolio website for Jun Song, a frontend-focused software engineer building polished product experiences for teams and clients."
+      content="Portfolio site for Minjun Song, a frontend developer building responsive product websites and polished user experiences."
     />
-    <title>Jun Song | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#hero">Jun Song</a>
+      <div class="container header-inner">
+        <a class="brand" href="#top">Minjun Song</a>
         <nav class="site-nav" aria-label="Primary">
           <a href="#hero">Home</a>
           <a href="#projects">Projects</a>
@@ -22,117 +22,130 @@
       </div>
     </header>
 
-    <main>
+    <main id="top">
       <section id="hero" class="hero section">
         <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow">Frontend engineering for products people actually use</p>
-            <h1>Building responsive web experiences that feel clear, fast, and production-ready.</h1>
-            <p class="role">Software Engineer specializing in modern UI implementation, static web delivery, and product-focused frontend systems.</p>
+            <p class="eyebrow">Available for frontend product work and freelance builds</p>
+            <h1>Building clear, fast websites that help teams look credible and ship confidently.</h1>
+            <p class="role">Frontend Developer specializing in static sites, product marketing pages, and UI polish.</p>
             <p class="bio">
-              I help teams turn product direction into polished interfaces with readable code, strong UX fundamentals, and pragmatic delivery. My work focuses on shipping clean web experiences that are easy to maintain and credible in front of customers, recruiters, and stakeholders.
+              I help startups and small teams turn rough requirements into responsive, maintainable web experiences.
+              My focus is readable structure, strong visual hierarchy, and practical implementation that works without a heavy stack.
             </p>
-            <ul class="credibility-list" aria-label="Credibility cues">
-              <li>4+ years building customer-facing web interfaces</li>
-              <li>Focus on portfolio, product marketing, and internal tool frontends</li>
-              <li>Comfortable with HTML, CSS, JavaScript, React, and shipping static-first experiences</li>
+            <ul class="credibility-list" aria-label="Credibility highlights">
+              <li>4+ years building frontend experiences</li>
+              <li>Focus on product websites, SaaS flows, and launch-ready UI</li>
+              <li>Works across HTML, CSS, JavaScript, and React-based teams</li>
             </ul>
             <div class="hero-actions">
               <a class="button button-primary" href="#projects">View Projects</a>
               <a class="button button-secondary" href="#contact">Start a Conversation</a>
             </div>
           </div>
-          <aside class="profile-card" aria-label="Profile photo placeholder">
-            <div class="profile-photo" role="img" aria-label="Profile photo placeholder">JS</div>
-            <p class="profile-caption">Profile photo placeholder</p>
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-photo" aria-hidden="true">MS</div>
+            <p class="profile-label">Profile Snapshot</p>
+            <p class="profile-text">
+              Based on practical delivery, accessible markup, and clean responsive layouts for public-facing web products.
+            </p>
           </aside>
         </div>
       </section>
 
-      <section id="projects" class="section projects-section">
+      <section id="projects" class="projects section">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Selected work</p>
-            <h2>Projects that show range and delivery quality</h2>
-            <p>
-              A small set of public projects with enough context for recruiters and freelance leads to judge fit quickly.
-            </p>
+            <p class="eyebrow">Selected Work</p>
+            <h2>Projects that show product thinking, not just code output.</h2>
           </div>
-          <div class="projects-grid">
+          <div class="project-grid">
             <article class="project-card">
               <h3>Simple Portfolio Website</h3>
               <p>
-                A static single-page portfolio focused on fast comprehension, responsive layout, and low-maintenance publishing.
+                A lightweight personal site built as a pure static page with clear information hierarchy and no deployment complexity.
               </p>
-              <p class="project-outcome">
-                Relevant for founders and independent professionals who need one clean public URL instead of scattered profile links.
+              <p class="project-impact">
+                Relevant for founders and freelancers who need a credible web presence that is easy to update and cheap to host.
               </p>
               <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
             </article>
-
             <article class="project-card">
-              <h3>GitHub PM Agent</h3>
+              <h3>Reusable UI Component Work</h3>
               <p>
-                A workflow-driven automation project for coordinating issue execution, prompts, and engineering actions across repository events.
+                Frontend component work centered on shared UI building blocks and interface consistency for product teams shipping across multiple screens.
               </p>
-              <p class="project-outcome">
-                Shows experience with developer tooling, structured automation, and turning process-heavy work into repeatable systems.
+              <p class="project-impact">
+                Shows practical experience with maintainable UI foundations that support faster page assembly and more consistent product presentation.
               </p>
-              <a href="https://github.com/songsjun/github-pm-agent" target="_blank" rel="noopener noreferrer">See project details</a>
+              <a href="https://github.com/songsjun/ui" target="_blank" rel="noopener noreferrer">View repository</a>
             </article>
-
             <article class="project-card">
-              <h3>Responsive Landing Page System</h3>
+              <h3>Stablecoin Product Interface</h3>
               <p>
-                A reusable marketing page concept built around semantic HTML, scannable content blocks, and mobile-first CSS patterns.
+                Repository work on a public product codebase in the digital asset space, with attention to interface structure and implementation detail.
               </p>
-              <p class="project-outcome">
-                Useful for freelance leads who need fast turnaround on polished web presence work without adding a frontend toolchain.
+              <p class="project-impact">
+                Useful proof for teams that need someone comfortable working in real public repos with product-facing frontend responsibilities.
               </p>
-              <a href="https://github.com/songsjun" target="_blank" rel="noopener noreferrer">Browse GitHub profile</a>
+              <a href="https://github.com/songsjun/USDX" target="_blank" rel="noopener noreferrer">View repository</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="section contact-section">
+      <section id="contact" class="contact section" aria-labelledby="contact-title">
         <div class="container contact-grid">
-          <div class="section-heading contact-copy">
+          <div class="contact-copy">
             <p class="eyebrow">Contact</p>
-            <h2>Reach out with an opportunity, project, or quick intro</h2>
+            <h2 id="contact-title">Reach out with a role, project, or quick question.</h2>
             <p>
-              The form below uses your email app as a convenience. If that does not work, use the direct contact details shown here.
+              The form below uses your mail app as a lightweight no-backend contact flow. If that is unreliable on your device, use the direct email or LinkedIn fallback options.
             </p>
-            <div class="contact-fallbacks">
-              <p><strong>Email:</strong> <a href="mailto:hello@junsong.dev">hello@junsong.dev</a></p>
-              <p>
-                <strong>LinkedIn:</strong>
-                <a href="https://www.linkedin.com/in/junsong-song" target="_blank" rel="noopener noreferrer">linkedin.com/in/junsong-song</a>
-              </p>
+            <div class="contact-fallbacks" aria-label="Fallback contact options">
+              <div class="fallback-card">
+                <p class="fallback-label">Direct email</p>
+                <p class="fallback-value">sjunsong@gmail.com</p>
+                <a href="mailto:sjunsong@gmail.com">sjunsong@gmail.com</a>
+              </div>
+              <div class="fallback-card">
+                <p class="fallback-label">LinkedIn</p>
+                <a href="https://www.linkedin.com/in/minjun-song" target="_blank" rel="noopener noreferrer">linkedin.com/in/minjun-song</a>
+              </div>
             </div>
           </div>
 
-          <form id="contact-form" class="contact-form" novalidate>
+          <form
+            class="contact-form"
+            id="contact-form"
+            action="mailto:sjunsong@gmail.com"
+            method="post"
+            enctype="text/plain"
+            data-recipient="sjunsong@gmail.com"
+          >
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" />
+            <input id="name" name="name" type="text" autocomplete="name" required />
 
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" />
+            <input id="email" name="email" type="email" autocomplete="email" required />
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6"></textarea>
+            <textarea id="message" name="message" rows="6" placeholder="What are you building, and what kind of help do you need?"></textarea>
 
-            <p id="form-status" class="form-status" aria-live="polite"></p>
-            <button class="button button-primary" type="submit">Open Email Draft</button>
+            <p class="form-note" id="form-note">
+              Required fields are name and email. JavaScript, when available, prepares a safer mail draft with your message.
+            </p>
+
+            <button type="submit" class="button button-primary">Send message</button>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© 2026 Jun Song. Built as a static single-page site.</p>
-        <a href="#hero">Back to top</a>
+      <div class="container footer-inner">
+        <p>&copy; 2026 Minjun Song</p>
+        <a href="#top">Back to top</a>
       </div>
     </footer>
 
