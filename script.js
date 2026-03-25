@@ -1,38 +1,71 @@
 (function () {
-  var form = document.getElementById("contact-form");
-  if (!form) {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+
+  if (!form || !status) {
     return;
   }
 
-  var recipient = form.getAttribute("data-recipient");
-  if (!recipient) {
-    return;
-  }
+  var emailAddress = 'junsong@example.com';
+  var subjectPrefix = 'Portfolio inquiry from ';
 
-  form.addEventListener("submit", function (event) {
-    var nameInput = document.getElementById("name");
-    var emailInput = document.getElementById("email");
-    var messageInput = document.getElementById("message");
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    var name = nameInput ? nameInput.value.trim() : "";
-    var email = emailInput ? emailInput.value.trim() : "";
-    var message = messageInput ? messageInput.value.trim() : "";
+    var nameInput = form.elements.namedItem('name');
+    var emailInput = form.elements.namedItem('email');
+    var messageInput = form.elements.namedItem('message');
 
-    if (!name || !email) {
-      event.preventDefault();
-      form.reportValidity();
+    if (!(nameInput instanceof HTMLInputElement) || !(emailInput instanceof HTMLInputElement) || !(messageInput instanceof HTMLTextAreaElement)) {
       return;
     }
 
-    event.preventDefault();
+    var name = nameInput.value.trim();
+    var email = emailInput.value.trim();
+    var message = messageInput.value.trim();
 
-    var subject = encodeURIComponent("Portfolio inquiry");
-    var body = encodeURIComponent(
-      "Name: " + name + "\n" +
-      "Email: " + email + "\n\n" +
-      "Message:\n" + (message || "No message provided.")
-    );
+    form.classList.remove('is-invalid');
+    nameInput.classList.remove('input-error');
+    emailInput.classList.remove('input-error');
+    status.className = 'form-status';
 
-    window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+    if (!name || !email) {
+      form.classList.add('is-invalid');
+      status.textContent = 'Please enter your name and email before sending.';
+      status.classList.add('is-error');
+
+      if (!name) {
+        nameInput.classList.add('input-error');
+        nameInput.focus();
+      }
+
+      if (!email) {
+        emailInput.classList.add('input-error');
+        if (name) {
+          emailInput.focus();
+        }
+      }
+
+      return;
+    }
+
+    var subject = subjectPrefix + name;
+    var body = [
+      'Name: ' + name,
+      'Email: ' + email,
+      '',
+      message || 'No message provided.'
+    ].join('\n');
+    var mailtoUrl =
+      'mailto:' +
+      emailAddress +
+      '?subject=' +
+      encodeURIComponent(subject) +
+      '&body=' +
+      encodeURIComponent(body);
+
+    status.textContent = 'Opening your email app with a prefilled message.';
+    status.classList.add('is-success');
+    window.location.href = mailtoUrl;
   });
 })();
