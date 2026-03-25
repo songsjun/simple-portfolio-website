@@ -1,37 +1,47 @@
-const contactForm = document.querySelector('#contact-form');
-const formStatus = document.querySelector('#form-status');
+(function () {
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
 
-const recipient = 'hello@junsong.dev';
-const subjectPrefix = 'Portfolio inquiry from';
+  if (!form || !status) {
+    return;
+  }
 
-if (contactForm && formStatus) {
-  contactForm.addEventListener('submit', (event) => {
+  var fixedRecipient = 'junsong.song.dev@gmail.com';
+  var fixedSubjectPrefix = 'Portfolio inquiry from ';
+
+  function setStatus(message, type) {
+    status.textContent = message;
+    status.className = 'form-status' + (type ? ' is-' + type : '');
+  }
+
+  form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const nameInput = contactForm.querySelector('#name');
-    const emailInput = contactForm.querySelector('#email');
-    const messageInput = contactForm.querySelector('#message');
+    var nameInput = form.elements.namedItem('name');
+    var emailInput = form.elements.namedItem('email');
+    var messageInput = form.elements.namedItem('message');
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    var name = nameInput && typeof nameInput.value === 'string' ? nameInput.value.trim() : '';
+    var email = emailInput && typeof emailInput.value === 'string' ? emailInput.value.trim() : '';
+    var message = messageInput && typeof messageInput.value === 'string' ? messageInput.value.trim() : '';
 
     if (!name || !email) {
-      formStatus.textContent = 'Please enter both your name and email before composing the message.';
+      setStatus('Name and email are required before opening your mail app.', 'error');
       return;
     }
 
-    const subject = `${subjectPrefix} ${name}`;
-    const bodyLines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
+    var subject = fixedSubjectPrefix + name;
+    var body = [
+      'Name: ' + name,
+      'Email: ' + email,
       '',
+      'Message:',
       message || 'No message provided.'
-    ];
+    ].join('\n');
 
-    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+    var mailtoUrl = 'mailto:' + fixedRecipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-    formStatus.textContent = 'Opening your email client.';
+    setStatus('Opening your default mail app with a prepared message.', 'success');
     window.location.href = mailtoUrl;
   });
-}
+})();

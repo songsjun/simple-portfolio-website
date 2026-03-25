@@ -3,155 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jun Song | Product-Focused Frontend Developer</title>
     <meta
       name="description"
-      content="Jun Song is a product-focused frontend developer building responsive web experiences for recruiters, startups, and freelance clients."
+      content="Portfolio site for a product-minded frontend developer building responsive web experiences for teams and clients."
     />
+    <title>Junsong Song | Frontend Developer</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header" id="top">
-      <div class="container">
+      <div class="container nav-shell">
+        <a class="brand" href="#hero">Junsong Song</a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a class="brand" href="#top">Jun Song</a>
-          <div class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </div>
+          <a href="#hero">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
-
-        <section class="hero" id="hero" aria-labelledby="hero-title">
-          <div class="hero-copy">
-            <p class="eyebrow">Available for frontend roles and select freelance work</p>
-            <h1 id="hero-title">Product-focused frontend developer building clear, conversion-ready web experiences.</h1>
-            <p class="hero-role">Frontend developer specializing in responsive interfaces, polished landing pages, and lightweight static sites.</p>
-            <p class="hero-bio">
-              I help teams and independent professionals present their work clearly on the web. My focus is practical frontend delivery: clean structure, strong visual hierarchy, and maintainable code that works without unnecessary tooling.
-            </p>
-
-            <ul class="credibility-list" aria-label="Credibility highlights">
-              <li>4+ years building customer-facing web interfaces</li>
-              <li>Strong fit for startup websites, portfolios, and product marketing pages</li>
-              <li>Hands-on with HTML, CSS, JavaScript, React, and GitHub-based delivery workflows</li>
-            </ul>
-
-            <div class="hero-actions">
-              <a class="button button-primary" href="#projects">View Projects</a>
-              <a class="button button-secondary" href="#contact">Start a Conversation</a>
-            </div>
-          </div>
-
-          <div class="profile-card" aria-label="Profile placeholder">
-            <div class="profile-photo" aria-hidden="true">JS</div>
-            <p class="profile-label">Profile Photo Placeholder</p>
-          </div>
-        </section>
       </div>
     </header>
 
     <main>
-      <section class="projects-section" id="projects" aria-labelledby="projects-title">
-        <div class="container">
+      <section class="hero" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Tagline: clear interfaces, credible delivery</p>
+            <h1>Frontend developer building polished product experiences for startups and client work.</h1>
+            <p class="role-statement">
+              Specialty: responsive HTML, CSS, and JavaScript interfaces that help teams ship faster and present their work clearly.
+            </p>
+            <p class="bio">
+              I design and build lightweight web experiences that are easy to maintain, fast to load, and straightforward for recruiters, collaborators, and customers to understand.
+            </p>
+            <ul class="credibility-list" aria-label="Credibility highlights">
+              <li>3+ shipped portfolio and product showcase builds</li>
+              <li>Focus on responsive UI, static delivery, and clean frontend structure</li>
+              <li>Comfortable across HTML5, CSS3, JavaScript, and GitHub Pages deployment</li>
+            </ul>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projects">View Projects</a>
+              <a class="button button-secondary" href="#contact">Get In Touch</a>
+            </div>
+          </div>
+          <aside class="profile-card" aria-label="Profile placeholder">
+            <div class="profile-photo" role="img" aria-label="Profile photo placeholder">JS</div>
+            <p class="profile-note">Profile photo placeholder</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="container section-shell">
           <div class="section-heading">
-            <p class="eyebrow">Selected Work</p>
-            <h2 id="projects-title">Projects that show delivery quality, not just titles.</h2>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected work</h2>
             <p>
-              This portfolio highlights practical frontend work with enough context for recruiters and freelance leads to judge fit quickly.
+              Three scannable examples that show how I present information clearly, keep implementation lean, and make static web work useful for real visitors.
             </p>
           </div>
 
-          <div class="projects-grid">
+          <div class="project-grid">
             <article class="project-card">
               <h3>Simple Portfolio Website</h3>
               <p>
-                A static single-page portfolio built for fast scanning, mobile responsiveness, and direct deployment to GitHub Pages without a build step.
+                A single-page portfolio built with semantic HTML, mobile-first CSS, and minimal JavaScript for progressive enhancement.
               </p>
-              <p class="project-context">
-                Relevant for founders and professionals who need a credible public presence with low maintenance and clear calls to action.
+              <p class="project-impact">
+                Relevant for freelance leads who need a maintainable public-facing site without backend cost or framework overhead.
               </p>
-              <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View Repository</a>
+              <a href="https://github.com/songsjun/simple-portfolio-website" target="_blank" rel="noopener noreferrer">View repository</a>
             </article>
 
             <article class="project-card">
               <h3>GitHub PM Agent</h3>
               <p>
-                A workflow automation project for coordinating product and engineering tasks across GitHub events, execution phases, and AI-assisted prompts.
+                A workflow-driven automation project that coordinates issue intake, worker prompts, and implementation output for software delivery.
               </p>
-              <p class="project-context">
-                Demonstrates structured problem solving, developer tooling experience, and an ability to reduce repetitive coordination overhead.
+              <p class="project-impact">
+                Demonstrates product-minded engineering, structured automation, and the ability to turn ambiguous requests into reliable execution flows.
               </p>
-              <a href="https://github.com/songsjun/github-pm-agent" target="_blank" rel="noopener noreferrer">Explore Code</a>
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">See project link</a>
             </article>
 
             <article class="project-card">
               <h3>Responsive Landing Page System</h3>
               <p>
-                A reusable front-end pattern set for shipping marketing pages with consistent structure, accessible layout, and mobile-first styling.
+                A reusable landing-page pattern focused on fast scanning, strong hierarchy, and conversion-friendly calls to action.
               </p>
-              <p class="project-context">
-                Useful for freelance clients who need faster launch cycles across multiple campaigns without introducing backend complexity.
+              <p class="project-impact">
+                Useful for teams that need marketing or recruiting pages which work cleanly on mobile and can be updated manually without tooling.
               </p>
-              <a href="https://github.com/songsjun" target="_blank" rel="noopener noreferrer">See More Work</a>
+              <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">View example reference</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="container contact-layout">
-          <div class="section-heading contact-copy">
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">Reach out with a role, project, or collaboration idea.</h2>
-            <p>
-              The form can open your email client as a convenience. If that is unreliable on your device, use the visible fallback options below.
-            </p>
-
-            <div class="contact-fallbacks" aria-label="Fallback contact options">
-              <p><strong>Email:</strong> <a href="mailto:hello@junsong.dev">hello@junsong.dev</a></p>
+      <section class="contact" id="contact">
+        <div class="container section-shell contact-grid">
+          <div>
+            <div class="section-heading">
+              <p class="eyebrow">Contact</p>
+              <h2>Start a conversation</h2>
               <p>
-                <strong>LinkedIn:</strong>
-                <a href="https://www.linkedin.com/in/junsong-dev/" target="_blank" rel="noopener noreferrer">linkedin.com/in/junsong-dev</a>
+                Use the form for a prefilled email draft, or reach out through the fallback options below if your device does not handle mail links reliably.
               </p>
             </div>
 
-            <noscript>
-              <p class="noscript-note">
-                JavaScript is disabled. The form may not prefill an email draft, so use the direct email or LinkedIn link above.
+            <div class="contact-fallbacks">
+              <p>
+                Email:
+                <a href="mailto:junsong.song.dev@gmail.com">junsong.song.dev@gmail.com</a>
               </p>
-            </noscript>
+              <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/junsong-song/" target="_blank" rel="noopener noreferrer">linkedin.com/in/junsong-song</a>
+              </p>
+            </div>
           </div>
 
-          <form
-            class="contact-form"
-            id="contact-form"
-            action="mailto:hello@junsong.dev"
-            method="post"
-            enctype="text/plain"
-            novalidate
-          >
+          <form class="contact-form" id="contact-form" action="#contact" method="get" novalidate>
             <label for="name">Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
+            <input id="name" name="name" type="text" autocomplete="name" />
 
             <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
+            <input id="email" name="email" type="email" autocomplete="email" />
 
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="6" placeholder="Tell me about the role, timeline, or project."></textarea>
+            <textarea id="message" name="message" rows="6"></textarea>
 
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
 
-            <button class="button button-primary" type="submit">Compose Email</button>
+            <button type="submit" class="button button-primary">Compose Email</button>
           </form>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-content">
-        <p>&copy; 2026 Jun Song. Built as a lightweight static site.</p>
+      <div class="container footer-shell">
+        <p>Built as a static single-page site for direct hosting on GitHub Pages.</p>
         <a href="#top">Back to top</a>
       </div>
     </footer>
