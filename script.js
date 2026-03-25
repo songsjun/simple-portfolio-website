@@ -1,40 +1,38 @@
-const contactForm = document.getElementById('contact-form');
-const nameInput = document.getElementById('name');
-const emailInput = document.getElementById('email');
-const messageInput = document.getElementById('message');
-const statusNode = document.getElementById('form-status');
+(function () {
+  var form = document.getElementById("contact-form");
+  if (!form) {
+    return;
+  }
 
-const CONTACT_EMAIL = 'hello@junsong.dev';
-const SUBJECT_PREFIX = 'Portfolio inquiry from';
+  var recipient = form.getAttribute("data-recipient");
+  if (!recipient) {
+    return;
+  }
 
-if (contactForm && nameInput && emailInput && messageInput && statusNode) {
-  contactForm.addEventListener('submit', (event) => {
-    event.preventDefault();
+  form.addEventListener("submit", function (event) {
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var messageInput = document.getElementById("message");
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    var name = nameInput ? nameInput.value.trim() : "";
+    var email = emailInput ? emailInput.value.trim() : "";
+    var message = messageInput ? messageInput.value.trim() : "";
 
     if (!name || !email) {
-      statusNode.textContent = 'Please enter your name and email before opening a draft.';
-      statusNode.classList.remove('is-success');
+      event.preventDefault();
+      form.reportValidity();
       return;
     }
 
-    const subject = `${SUBJECT_PREFIX} ${name}`;
-    const lines = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      '',
-      'Message:',
-      message || 'No message provided.'
-    ];
+    event.preventDefault();
 
-    const body = lines.join('\n');
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    var subject = encodeURIComponent("Portfolio inquiry");
+    var body = encodeURIComponent(
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      "Message:\n" + (message || "No message provided.")
+    );
 
-    statusNode.textContent = 'Opening your email client.';
-    statusNode.classList.add('is-success');
-    window.location.href = mailtoUrl;
+    window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
   });
-}
+})();
