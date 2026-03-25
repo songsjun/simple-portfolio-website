@@ -1,17 +1,15 @@
 (function () {
   var form = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
-
-  if (!form || !status) {
+  if (!form) {
     return;
   }
 
-  var recipient = "hello@junsong.dev";
-  var subjectBase = "Portfolio inquiry from ";
+  var recipient = form.getAttribute("data-recipient");
+  if (!recipient) {
+    return;
+  }
 
   form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
     var nameInput = document.getElementById("name");
     var emailInput = document.getElementById("email");
     var messageInput = document.getElementById("message");
@@ -21,28 +19,20 @@
     var message = messageInput ? messageInput.value.trim() : "";
 
     if (!name || !email) {
-      status.textContent = "Please enter both your name and email before sending.";
+      event.preventDefault();
+      form.reportValidity();
       return;
     }
 
-    var subject = subjectBase + name;
-    var lines = [
-      "Name: " + name,
-      "Email: " + email,
-      "",
-      "Message:",
-      message || "No message provided."
-    ];
+    event.preventDefault();
 
-    var mailtoUrl =
-      "mailto:" +
-      recipient +
-      "?subject=" +
-      encodeURIComponent(subject) +
-      "&body=" +
-      encodeURIComponent(lines.join("\n"));
+    var subject = encodeURIComponent("Portfolio inquiry from " + name);
+    var body = encodeURIComponent(
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n\n" +
+      "Message:\n" + (message || "No message provided.")
+    );
 
-    status.textContent = "Opening your email app...";
-    window.location.href = mailtoUrl;
+    window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
   });
 })();
