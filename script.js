@@ -26,7 +26,7 @@
 
     event.preventDefault();
 
-    var subject = encodeURIComponent("Portfolio inquiry from " + name);
+    var subject = encodeURIComponent("Portfolio inquiry");
     var body = encodeURIComponent(
       "Name: " + name + "\n" +
       "Email: " + email + "\n\n" +
